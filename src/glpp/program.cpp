@@ -58,7 +58,7 @@ namespace glpp{
 		return param_val;
 	}
 
-	const shared_uniform_t & program::get_uniform(const std::string & uname) throw (uniform_not_found){
+	const shared_uniform_t & program::get_uniform(const std::string & uname){
 		uniform::name_type uniform_index = GL_INVALID_INDEX;
 		const char * names = uname.c_str();
 		::glGetUniformIndices(object_name(), 1, &names, &uniform_index);
@@ -83,7 +83,7 @@ namespace glpp{
 		return true;
 	}
 
-	const shared_uniform_t & program::get_uniform(uniform::name_type uniform_index) throw (uniform_not_found) {
+	const shared_uniform_t & program::get_uniform(uniform::name_type uniform_index) {
 
 		uniforms_container_type::iterator it;
 		if ((it = m_uniforms.find(uniform_index)) == m_uniforms.end()) {
@@ -95,7 +95,7 @@ namespace glpp{
 		return m_uniforms[uniform_index];
 	}
 
-	const shared_global_uniform_t & program::get_global_uniform(const std::string & name) throw (uniform_not_found) {
+	const shared_global_uniform_t & program::get_global_uniform(const std::string & name) {
 
 		shared_uniform_t uni = get_uniform(name);	// Get general uniform type
 
@@ -113,7 +113,7 @@ namespace glpp{
 		return m_global_uniforms[uni->object_name()];
 	}
 
-	const shared_uniform_block_t & program::get_uniform_block(const std::string & bname) throw (uniform_not_found){
+	const shared_uniform_block_t & program::get_uniform_block(const std::string & bname) {
 		uniform_block::name_type bid = ::glGetUniformBlockIndex(object_name(), bname.c_str());
 		if (bid == GL_INVALID_INDEX)
 			throw uniform_not_found(bname);
@@ -126,7 +126,7 @@ namespace glpp{
 		return it->second;
 	}
 
-	const shared_uniform_block_t & program::get_uniform_block(uniform_block::name_type bid) throw (uniform_not_found) {
+	const shared_uniform_block_t & program::get_uniform_block(uniform_block::name_type bid) {
 
 		uniform_blocks_container_type::iterator it;
 		if ((it = m_uniform_blocks.find(bid)) == m_uniform_blocks.end()) {
@@ -239,14 +239,14 @@ namespace glpp{
 #	endif
 	}
 
-	void program::link() throw(link_error){
+	void program::link() {
 		::glLinkProgram(m_gl_name);
 		if (!is_linked()) {
 			throw link_error(info_log());
 		}
 	}
 
-	void program::build() throw(compile_error, link_error) {
+	void program::build() {
 		shaders_container_type::iterator it;
 
 		for(it = m_shaders.begin(); it != m_shaders.end(); it ++) {

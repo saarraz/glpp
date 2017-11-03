@@ -97,7 +97,7 @@ namespace glpp {
 		 * http://www.opengl.org/sdk/docs/man4/xhtml/glGetActiveUniformsiv.xml
 		 * @throw exception If this variable does not belong to a @ref uniform_block.
 		 */
-		const shared_uniform_block_t & owner_block() const throw(exception);
+		const shared_uniform_block_t & owner_block() const;
 
 		//! Get @ref program that this uniform belongs to.
 		const program & owner_program() const {

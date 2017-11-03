@@ -90,7 +90,7 @@ namespace glpp {
 		/**
 		 * http://www.opengl.org/sdk/docs/man4/xhtml/glLinkProgram.xml
 		 */
-		void link() throw(link_error);
+		void link();
 
 		//! Compile shaders and link them
 		/**
@@ -99,7 +99,7 @@ namespace glpp {
 		 * @ref exclusive_glpp_api attach_shader() detach_shader()
 		 * @see shader::compile() link()
 		 */
-		void build() throw(compile_error, link_error);
+		void build();
 
 		//! Validates a program object
 		/**
@@ -134,7 +134,7 @@ namespace glpp {
 		 * @return shared ptr to @ref uniform
 		 * @see get_uniform(uniform::name_type)
 		 */
-		const shared_uniform_t & get_uniform(const std::string & name) throw (uniform_not_found);
+		const shared_uniform_t & get_uniform(const std::string & name);
 
 		//! Check if there is uniform variable declared in any place (in-block or global)
 		/**
@@ -150,7 +150,7 @@ namespace glpp {
 		 * @return shared ptr to @ref uniform
 		 * @see get_uniform(const std::string &)
 		 */
-		const shared_uniform_t & get_uniform(uniform::name_type uniform_index) throw (uniform_not_found);
+		const shared_uniform_t & get_uniform(uniform::name_type uniform_index);
 
 		//! Get an active uniform variable declared in global scope.
 		/**
@@ -159,7 +159,7 @@ namespace glpp {
 		 * @return shared ptr to @ref global_uniform
 		 * @throw uniform_not_found If there is no uniform with this name, or if it is not a variable of global scope.
 		 */
-		const shared_global_uniform_t & get_global_uniform(const std::string & name) throw (uniform_not_found);
+		const shared_global_uniform_t & get_global_uniform(const std::string & name);
 
 		//! Get an active uniform block by name
 		/**
@@ -167,7 +167,7 @@ namespace glpp {
 		 * * @return shared ptr to @ref uniform_block
 		 * @see get_uniform_block(uniform_block::name_type)
 		 */
-		const shared_uniform_block_t & get_uniform_block(const std::string & bname) throw (uniform_not_found);
+		const shared_uniform_block_t & get_uniform_block(const std::string & bname);
 
 		//! Get an active uniform block by name
 		/**
@@ -175,7 +175,7 @@ namespace glpp {
 		 * @return shared ptr to @ref uniform_block
 		 * @see get_uniform_block(const std::string &)
 		 */
-		const shared_uniform_block_t & get_uniform_block(uniform_block::name_type id) throw (uniform_not_found);
+		const shared_uniform_block_t & get_uniform_block(uniform_block::name_type id);
 
 		//! Bind a user-defined varying out variable to a fragment shader color number
 		/**

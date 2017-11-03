@@ -2,10 +2,10 @@
 set(RESOURCE_FILES
 	instances.frag
 	instances.vert
-	mrt_persp.frag
-	mrt_persp.vert
-	mrt_triangle.frag
-	mrt_triangle.vert
+	# mrt_persp.frag
+	# mrt_persp.vert
+	# mrt_triangle.frag
+	# mrt_triangle.vert
 	triangle.frag
 	triangle.vert
 )

@@ -152,7 +152,7 @@ namespace glpp {
 	 * You need to manually context::create() for each context that you need.
 	 * @throw no_active_context If there is no active context
 	 */
-	context & current_ctx() throw(no_active_context);
+	context & current_ctx();
 }
 
 #endif

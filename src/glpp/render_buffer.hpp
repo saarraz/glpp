@@ -48,7 +48,7 @@ namespace glpp {
 		/**
 		 * @see render_buffer(), define_storage()
 		 */
-		render_buffer(image_rendable_format internal_format, size_t width, size_t height, size_t samples = 0) throw(gl_error);
+		render_buffer(image_rendable_format internal_format, size_t width, size_t height, size_t samples = 0);
 
 		//! Destroy and release resources
 		/**
@@ -66,7 +66,7 @@ namespace glpp {
 		/**
 		 * http://www.opengl.org/sdk/docs/man4/xhtml/glRenderbufferStorageMultisample.xml
 		 */
-		void define_storage(image_rendable_format internal_format, size_t width, size_t height, size_t samples = 0) throw(gl_error);
+		void define_storage(image_rendable_format internal_format, size_t width, size_t height, size_t samples = 0);
 	};
 }
 

@@ -90,7 +90,7 @@ namespace glpp {
 		/**
 		 * http://www.opengl.org/sdk/docs/man4/xhtml/glCompileShader.xml
 		 */
-		void compile() throw(compile_error);
+		void compile();
 
 		//! Return true only if it is compiled successfully.
 		/**

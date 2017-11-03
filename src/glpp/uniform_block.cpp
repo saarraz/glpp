@@ -69,7 +69,7 @@ namespace glpp {
 		return _uniform_block_get_param<bool>(*this, uniform_block_param::REFERENCED_BY_GEOMETRY_SHADER);
 	}
 
-	void bind_to(GLuint point, uniform_block * pblock, buffer * pbuffer) throw (std::invalid_argument){
+	void bind_to(GLuint point, uniform_block * pblock, buffer * pbuffer) {
 		pblock->bind_to_point(point);
 		if (pbuffer->type() != glpp::buffer_type::UNIFORM)
 			throw std::invalid_argument("Uniform blocks can only be bound with buffers of UNIFORM type.");

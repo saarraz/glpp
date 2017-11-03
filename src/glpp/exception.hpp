@@ -195,7 +195,7 @@ namespace glpp {
 	 * OpenGL functions. If the error stack is not clean it will throw an gl_error exception.
 	 * http://www.opengl.org/sdk/docs/man4/xhtml/glGetError.xml
 	 */
-	inline void assert_no_glerror(const std::string & custom_message) throw(gl_error){
+	inline void assert_no_glerror(const std::string & custom_message) {
 		GLenum gerr;
 		if ((gerr = glGetError()) != GL_NO_ERROR) {
 			throw gl_error(gerr, custom_message);

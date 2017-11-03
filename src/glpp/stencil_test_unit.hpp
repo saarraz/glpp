@@ -205,7 +205,7 @@ namespace glpp {
 		 * http://www.opengl.org/sdk/docs/man4/xhtml/glStencilOpSeparate.xml
 		 * @see set_op, set_face_op
 		 */
-		stencil_op get_op(face_type face, bool stencil_pass, bool depth_pass) throw(std::invalid_argument);
+		stencil_op get_op(face_type face, bool stencil_pass, bool depth_pass);
 
 	protected:
 

@@ -101,7 +101,7 @@ namespace glpp {
 		return m_is_row_major;
 	}
 
-	const shared_uniform_block_t & uniform::owner_block() const throw(exception) {
+	const shared_uniform_block_t & uniform::owner_block() const {
 		query_info();
 		if (! m_owner_block) {
 			throw exception("Cannot get the uniform block of a global uniform variable.");

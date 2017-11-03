@@ -33,7 +33,7 @@ namespace glpp{
 			image_rendable_format internal_format,
 			size_t width,
 			size_t height,
-			size_t samples) throw(gl_error) {
+			size_t samples) {
 
 		::glGenRenderbuffers(1, &m_gl_name);
 		assert_no_glerror("glGenRenderbuffers failed. ");
@@ -50,7 +50,7 @@ namespace glpp{
 		::glBindRenderbuffer(GL_RENDERBUFFER, object_name());
 	}
 
-	void render_buffer::define_storage(image_rendable_format internal_format, size_t width, size_t height, size_t samples) throw(gl_error) {
+	void render_buffer::define_storage(image_rendable_format internal_format, size_t width, size_t height, size_t samples) {
 		bind();
 		::glRenderbufferStorageMultisample(GL_RENDERBUFFER, samples, GLPP_CAST_TO_SCALAR(GLenum, internal_format), width, height);
 		assert_no_glerror("glRenderbufferStorageMultisample failed.");

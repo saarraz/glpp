@@ -63,7 +63,7 @@ namespace glpp{
 		return (bool)is_compiled_flag;
 	}
 
-	void shader::compile() throw(compile_error){
+	void shader::compile() {
 		const GLchar * chunks[1] = { m_source.c_str() };
 		GLint chunk_sizes[1];
 		chunk_sizes[0]= m_source.length();

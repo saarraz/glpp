@@ -138,7 +138,7 @@ namespace glpp {
 	 * @throw std::invalid_argument If the pbuffer is not of uniform type.
 	 * @see uniform_block::bind_to_point(), buffer::bind_to_point()
 	 */
-	void bind_to(GLuint point, uniform_block * pblock, buffer * pbuffer) throw (std::invalid_argument);
+	void bind_to(GLuint point, uniform_block * pblock, buffer * pbuffer);
 }
 
 #endif

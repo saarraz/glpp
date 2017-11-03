@@ -136,7 +136,7 @@ namespace glpp {
 		return get_param_int(context_param_type::ACTIVE_TEXTURE) - GL_TEXTURE0;
 	}
 
-	context & current_ctx() throw(no_active_context){
+	context & current_ctx() {
 		if (_curr_ctx == NULL)
 			throw no_active_context();
 		return * _curr_ctx;

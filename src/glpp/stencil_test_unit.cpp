@@ -121,7 +121,7 @@ stencil_op stencil_test_unit::get_back_stencil_pass_depth_pass_op() {
 	return GLPP_CAST_TO_SAFE_ENUM(stencil_op, m_ctx.get_param_int(context_param_type::STENCIL_BACK_PASS_DEPTH_PASS));
 }
 
-stencil_op stencil_test_unit::get_op(face_type face, bool stencil_pass, bool depth_pass) throw(std::invalid_argument){
+stencil_op stencil_test_unit::get_op(face_type face, bool stencil_pass, bool depth_pass) {
 
 	if (face != face_type::BACK) {
 		if (!stencil_pass) {
