@@ -18,6 +18,8 @@ macro_log_feature(OPENGL_FOUND "OpenGL" "Required to build glpp" "http://www.ope
 find_package(GLUT)
 macro_log_feature(GLUT_FOUND "FreeGLUT" "Required to build glpp" "http://freeglut.sourceforge.net/" TRUE)
 
+set(PKG_GLEW_LIBRARY_DIRS /lib)
+set(PKG_GLEW_INCLUDE_DIRS /usr/include)
 find_package(GLEW)
 macro_log_feature(GLEW_FOUND "GLEW" "Required to build glpp" "http://glew.sourceforge.net/" TRUE)
 
@@ -47,7 +49,7 @@ if (FORCE_CXX11)
 endif()
 
 if(NOT WIN32)
-    add_definitions(-fPIC)
+    # add_definitions(-fPIC)
 endif()
 
 include_directories(
